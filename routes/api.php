@@ -38,3 +38,13 @@ Route::group(
         );
     }
 );
+
+Route::group(
+    ['namespace' => 'API'], function(){
+        Route::group(
+            ['prefix' => 'worldcup'], function(){
+                Route::get('/scores', [WorldcupController::class, 'getScores']);
+            }
+        );
+    }
+);
