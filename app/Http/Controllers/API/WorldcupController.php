@@ -13,4 +13,10 @@ class WorldcupController extends Controller
         $data = \App\Models\Team::getTeams($request->query());
         return DataTables::of($data)->make(true);
     }
+
+    public function getFixtures(Request $request)
+    {
+        $data = \App\Models\Fixture::getFixtures($request->query());
+        return DataTables::of($data)->make(true);
+    }
 }
