@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TeamSeeder::class);
         $this->call(FixtureSeeder::class);
         $this->call(ScoreSeeder::class);
+        $this->call(BlogSeeder::class);
     }
 }

@@ -25,4 +25,10 @@ class WorldcupController extends Controller
         $data = \App\Models\Score::getScores($request->query());
         return DataTables::of($data)->make(true);
     }
+
+    public function getBlogPost(Request $request)
+    {
+        $data = \App\Models\Blog::getBlogPost($request->query());
+        return DataTables::of($data)->make(true);
+    }
 }

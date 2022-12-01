@@ -48,3 +48,13 @@ Route::group(
         );
     }
 );
+
+Route::group(
+    ['namespace' => 'API'], function(){
+        Route::group(
+            ['prefix' => 'worldcup'], function(){
+                Route::get('/blogs', [WorldcupController::class, 'getBlogPost']);
+            }
+        );
+    }
+);
