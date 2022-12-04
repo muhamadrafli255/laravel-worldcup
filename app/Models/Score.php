@@ -11,6 +11,11 @@ class Score extends Model
 
     protected $guarded = ['id'];
 
+    public function Fixture()
+    {
+        return $this->belongsTo(Fixture::class);
+    }
+
     public static function getScores($request)
     {
         $scores = Score::select(
