@@ -11,6 +11,21 @@ class Fixture extends Model
 
     protected $guarded = ['id'];
 
+    public function HomeTeam()
+    {
+        return $this->belongsTo(Team::class, 'home');
+    }
+
+    public function AwayTeam()
+    {
+        return $this->belongsTo(Team::class, 'away');
+    }
+
+    public function Score()
+    {
+        return $this->belongsTo(Score::class);
+    }
+
     public static function getFixtures($request)
     {
         $fixtures = Fixture::select(
