@@ -11,6 +11,11 @@ class Team extends Model
 
     protected $guarded = ['id'];
 
+    public function fixture()
+    {
+        return $this->hasMany(Fixture::class);
+    }
+
     public static function getTeams($request)
     {
         $teams = Team::select(
